@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useTodoContext } from '~/contexts/todo-context'
 
 const { addTodo } = useTodoContext()
 
-const input = defineModel<string>()
+const input = ref('')
 
 function onSubmit() {
   if (!input.value) return alert('Please enter a todo')
